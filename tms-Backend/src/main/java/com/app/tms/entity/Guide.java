@@ -6,45 +6,42 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-
 
 @Data
 @Builder
 @Entity
-@Table(name="Guide")
+@Table(name = "Guide")
 
 public class Guide {
-	
+
 //	public enum Gender {
 //        MALE,
 //        FEMALE,
 //        OTHER
 //    }
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
-	@Column(name="Name")
+
+	@Column(name = "Name")
 	private String name;
-	
-	@Column(name="Email")
+
+	@Column(name = "Email")
 	private String email;
-	
-	@Column(name="Mobile_Number")
+
+	@Column(name = "Mobile_Number")
 	private String mobile;
-	
-	@Column(name="Date")
+
+	@Column(name = "Date")
 	private String date;
-	
-	@Column(name="Password")
+
+	@Column(name = "Password")
 	private String password;
-	
-	@Column(name="Gender")
+
+	@Column(name = "Gender")
 	private String gender;
 
 	public Long getId() {
@@ -104,7 +101,7 @@ public class Guide {
 	}
 
 	public Guide(Long id, String name, String email, String mobile, String date, String password, String gender) {
-		
+
 		this.id = id;
 		this.name = name;
 		this.email = email;
@@ -113,10 +110,9 @@ public class Guide {
 		this.password = password;
 		this.gender = gender;
 	}
-	
+
 	public Guide() {
-		
+
 	}
-	
-	
+
 }

@@ -24,41 +24,40 @@ import com.app.tms.service.PackagesService;
 
 public class PackagesController {
 	@Autowired
-	private PackagesService packagesService; 
-	
-	//Add Packages REST API
+	private PackagesService packagesService;
+
+	// Add Packages REST API
 	@PostMapping
-	public ResponseEntity<PackagesDto> createPackages(@RequestBody PackagesDto packagesDto){
+	public ResponseEntity<PackagesDto> createPackages(@RequestBody PackagesDto packagesDto) {
 		PackagesDto savedPackages = packagesService.createPackages(packagesDto);
 		return new ResponseEntity<>(savedPackages, HttpStatus.CREATED);
 	}
-	
-	//Get Packages by Id REST API
+
+	// Get Packages by Id REST API
 	@GetMapping("{id}")
-	public ResponseEntity<PackagesDto> getPackagesById(@PathVariable("id") Long packagesId){
+	public ResponseEntity<PackagesDto> getPackagesById(@PathVariable("id") Long packagesId) {
 		PackagesDto packagesDto = packagesService.getPackagesById(packagesId);
 		return ResponseEntity.ok(packagesDto);
 	}
-	
-	//Get all Packages REST API
+
+	// Get all Packages REST API
 	@GetMapping
-	public ResponseEntity<List<PackagesDto>> getAllPackagess(){
+	public ResponseEntity<List<PackagesDto>> getAllPackagess() {
 		List<PackagesDto> packagess = packagesService.getAllPackagess();
 		return ResponseEntity.ok(packagess);
 	}
-	
-	//Update packages details REST API
+
+	// Update packages details REST API
 	@PutMapping("{id}")
 	public ResponseEntity<PackagesDto> updatePackages(@PathVariable("id") Long packagesId,
-					@RequestBody PackagesDto updatedPackages){
+			@RequestBody PackagesDto updatedPackages) {
 		PackagesDto packagesDto = packagesService.updatePackages(packagesId, updatedPackages);
 		return ResponseEntity.ok(packagesDto);
 	}
-	
-	
-	//Delete Packages REST API
+
+	// Delete Packages REST API
 	@DeleteMapping("{id}")
-	public ResponseEntity<String> deletePackages (@PathVariable("id") Long packagesId){
+	public ResponseEntity<String> deletePackages(@PathVariable("id") Long packagesId) {
 		packagesService.deletePackages(packagesId);
 		return ResponseEntity.ok("Packages deleted successfully!");
 	}

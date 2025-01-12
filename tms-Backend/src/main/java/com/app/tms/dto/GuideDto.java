@@ -1,23 +1,18 @@
 package com.app.tms.dto;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
 
 public class GuideDto {
-	
+
 	private Long id;
-	
+
 	private String name;
 	private String email;
 	private String mobile;
 	private String date;
 	private String password;
 	private String gender;
-	
+
 	public GuideDto() {
-		
+
 	}
 
 	public GuideDto(Long id, String name, String email, String mobile, String date, String password, String gender) {
@@ -86,5 +81,5 @@ public class GuideDto {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-		
+
 }

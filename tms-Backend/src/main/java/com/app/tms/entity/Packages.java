@@ -12,42 +12,42 @@ import lombok.Data;
 @Data
 @Builder
 @Entity
-@Table(name="Packages")
+@Table(name = "Packages")
 
 public class Packages {
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
-	@Column(name="Name")
+
+	@Column(name = "Name")
 	private String name;
-	
-	@Column(name="Description")
+
+	@Column(name = "Description")
 	private String description;
-	
-	@Column(name="Duration")
+
+	@Column(name = "Duration")
 	private String duration;
-	
-	@Column(name="Price")
+
+	@Column(name = "Price")
 	private long price;
-	
-	@Column(name="State")
+
+	@Column(name = "State")
 	private String state;
-	
-	@Column(name="Country")
+
+	@Column(name = "Country")
 	private String country;
-	
-	@Column(name="Date")
+
+	@Column(name = "Date")
 	private String date;
-	
-	@Column(name="Availibility")
+
+	@Column(name = "Availibility")
 	private int availibility;
-	
+
 	public Packages() {
-		
+
 	}
-	
+
 	public Packages(Long id, String name, String description, String duration, long price, String state, String country,
 			String date, int availibility) {
 		this.id = id;
@@ -132,6 +132,5 @@ public class Packages {
 	public void setAvailibility(int availibility) {
 		this.availibility = availibility;
 	}
-
 
 }
